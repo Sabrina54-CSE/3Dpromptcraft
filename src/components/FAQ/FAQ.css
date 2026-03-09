@@ -1,0 +1,35 @@
+.faq__title{font-size:clamp(22px,2.6vw,28px);font-weight:800;color:var(--text-white);text-align:center;margin-bottom:36px;letter-spacing:-.3px}
+.faq__list{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:7px}
+.faq-item__reveal{display:block}
+.faq-item{
+  border-radius:var(--radius-md);border:1px solid var(--border-subtle);
+  background:rgba(255,255,255,.02);overflow:hidden;cursor:pointer;
+  transition:border-color .22s,background .22s,transform .22s var(--ease-spring);
+}
+.faq-item:hover{background:rgba(255,255,255,.04);border-color:var(--border-card);transform:translateX(3px)}
+.faq-item--open{border-color:var(--border-green);background:rgba(61,220,132,.04)}
+.faq-item__row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px}
+.faq-item__q{
+  font-size:13.5px;font-weight:500;color:var(--text-secondary);line-height:1.5;
+  transition:color .22s;
+}
+.faq-item:hover .faq-item__q,.faq-item--open .faq-item__q{color:var(--text-white)}
+.faq-item__icon{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;font-size:17px;
+  border:1px solid var(--border-subtle);background:rgba(255,255,255,.04);
+  display:flex;align-items:center;justify-content:center;color:var(--text-muted);
+  transition:background .22s,color .22s,border-color .22s,transform .28s var(--ease-spring);
+}
+.faq-item--open .faq-item__icon{background:var(--accent-green-dim);color:var(--accent-green);border-color:var(--border-green);transform:rotate(135deg)}
+.faq-item__body{max-height:0;overflow:hidden;padding:0 20px;transition:max-height .38s cubic-bezier(.22,1,.36,1),padding .38s}
+.faq-item--open .faq-item__body{max-height:160px;padding:0 20px 16px}
+.faq-item__body p{font-size:13px;color:var(--text-muted);line-height:1.78}
+
+@media(max-width:640px){
+  .faq__title{font-size:22px;margin-bottom:24px}
+  .faq__list{gap:6px}
+  .faq-item__row{padding:14px 16px;gap:12px}
+  .faq-item__q{font-size:13px}
+  .faq-item--open .faq-item__body{max-height:200px;padding:0 16px 14px}
+  .faq-item__body p{font-size:12px}
+}
